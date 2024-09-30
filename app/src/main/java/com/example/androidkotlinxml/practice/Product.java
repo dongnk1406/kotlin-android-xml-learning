@@ -1,10 +1,13 @@
-package com.example.androidkotlinxml;
+package com.example.androidkotlinxml.practice;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
+
 public class Product {
+    ArrayList<Product> productsList = new ArrayList();
     private String name;
     private double price;
     private double tax;
@@ -42,8 +45,18 @@ public class Product {
         this.name = name;
     }
 
+    public Product addProductToList(@NonNull Product product) {
+        productsList.add(product);
+        return product;
+    }
+
+    public ArrayList<Product> getProductsList() {
+        return productsList;
+    }
+
     public Product enterProductItem(String name, double price, double tax) {
         Product product = new Product(name, price, tax);
+        productsList.add(product);
         return product;
     }
 
