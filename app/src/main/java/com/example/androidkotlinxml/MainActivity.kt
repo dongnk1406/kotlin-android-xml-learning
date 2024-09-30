@@ -3,6 +3,7 @@ package com.example.androidkotlinxml
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androidkotlinxml.learn_interface.PigAnimal
 import com.example.androidkotlinxml.practice.ElectronicStudent
 import com.example.androidkotlinxml.practice.InformationStudent
 import com.example.androidkotlinxml.practice.Product
@@ -16,8 +17,11 @@ class MainActivity : AppCompatActivity() {
         val product1 = product.enterProductItem("Iphone", 1000.0, 0.1);
         val itStudent = InformationStudent(10.0, 10.0)
         val electronicStudent = ElectronicStudent(5.0, 5.0)
+        val pig = PigAnimal();
         product.addProductToList(product1);
         product.printProductItem(product1);
+
+        pig.animalSound();
 
         Log.d(
             "Student",
